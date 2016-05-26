@@ -34,6 +34,7 @@ public class JFGrupo extends javax.swing.JFrame {
         Tomarasistencia = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        MandarCorreo = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         grupo = new javax.swing.JMenu();
 
@@ -54,6 +55,9 @@ public class JFGrupo extends javax.swing.JFrame {
 
         jMenuItem5.setText("Planificacion del curso");
         MenuAcciones.add(jMenuItem5);
+
+        MandarCorreo.setText("Mandar correo");
+        MenuAcciones.add(MandarCorreo);
 
         MenuBar.add(MenuAcciones);
 
@@ -115,6 +119,7 @@ public class JFGrupo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem MandarCorreo;
     public javax.swing.JMenu MenuAcciones;
     public javax.swing.JMenuBar MenuBar;
     public javax.swing.JMenuItem Tomarasistencia;

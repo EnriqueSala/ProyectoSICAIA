@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -24,35 +24,36 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="647" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="488" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnAsistencia" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="btnCorreos" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnCorreos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnAsistencia" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" pref="127" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="275" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,16 +66,21 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="TablaAlumnos">
+        <Component class="javax.swing.JTable" name="TablaAsistencia">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="4">
-                <Column editable="true" title="Nombre" type="java.lang.String"/>
-                <Column editable="true" title="Apellidos" type="java.lang.String"/>
-                <Column editable="true" title="Grado" type="java.lang.String"/>
-                <Column editable="true" title="Grupo" type="java.lang.String"/>
-                <Column editable="true" title="Asignatura" type="java.lang.String"/>
-                <Column editable="true" title="Tutor" type="java.lang.String"/>
+                <Column editable="false" title="Nombre" type="java.lang.String"/>
+                <Column editable="false" title="Apellidos" type="java.lang.String"/>
+                <Column editable="false" title="Grado" type="java.lang.String"/>
+                <Column editable="false" title="Grupo" type="java.lang.String"/>
+                <Column editable="false" title="Asignatura" type="java.lang.String"/>
+                <Column editable="true" title="Asistencia" type="java.lang.Boolean">
+                  <Data value="null"/>
+                  <Data value="false"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -104,7 +110,7 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
@@ -121,18 +127,23 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JButton" name="btnAsistencia">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mandar Correo a los tutores"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCorreos">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Correos"/>
+        <Property name="text" type="java.lang.String" value="TomarAsistencia"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Asignar valores a asistencia"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1=Presente y 0=Ausente"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

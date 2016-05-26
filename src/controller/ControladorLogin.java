@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import model.Empleado;
 import persistencia.HoraConexiones;
 import persistencia.Login;
+import persistencia.RecuperarTutorAlumno;
 import view.JFLogin;
 import view.JFMaestro;
 import view.JFTutor;
@@ -64,9 +65,13 @@ public class ControladorLogin implements ActionListener{
             JOptionPane.showMessageDialog(vistalogin, "Datos correctos");
             
             JFTutor vistatutor= new JFTutor();
-            ControladorTutor controladortutor = new ControladorTutor(vistatutor, login);
             vistatutor.setVisible(true);
             vistatutor.setLocationRelativeTo(null);
+            RecuperarTutorAlumno recuperar = new RecuperarTutorAlumno();
+            
+            String alumno = recuperar.listarTutorAlumno(empleado.getNombre());
+            ControladorTutor controladortutor = new ControladorTutor(vistatutor, login, alumno);
+            
             
             
             Date d = new Date();

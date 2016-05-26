@@ -46,6 +46,14 @@
                 <Property name="text" type="java.lang.String" value="Planificacion del curso"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MandarCorreo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mandar correo"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">

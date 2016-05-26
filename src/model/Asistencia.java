@@ -11,32 +11,86 @@ package model;
  */
 public class Asistencia {
     
-    private String fecha;
-    private String alumno;
-    private int valor;
+    private String nombre;
+    private String apellidos;
+    private String grado;
+    private String grupo;
+    private String asignatura;
+    private String asistencia;
+    private String dia;
+    private String mes;
+    private String año;
 
-    public String getFecha() {
-        return fecha;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getAlumno() {
-        return alumno;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setAlumno(String alumno) {
-        this.alumno = alumno;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public int getValor() {
-        return valor;
+    public String getGrado() {
+        return grado;
     }
 
-    public void setValor(int valor) {
-        this.valor = valor;
+    public void setGrado(String grado) {
+        this.grado = grado;
+    }
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+
+    public String getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(String asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public String getAsistencia() {
+        return asistencia;
+    }
+
+    public void setAsistencia(String asistencia) {
+        this.asistencia = asistencia;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    public String getAño() {
+        return año;
+    }
+
+    public void setAño(String año) {
+        this.año = año;
     }
     
     

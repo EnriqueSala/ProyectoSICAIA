@@ -28,26 +28,43 @@ public class JFTutor extends javax.swing.JFrame {
     private void initComponents() {
 
         lblbienvenida = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblbienvenida.setText("Bienvienido tutor");
+
+        jLabel1.setText("Ver Asistencias");
+
+        btn.setText("Ver");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(lblbienvenida)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(lblbienvenida))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel1)
+                        .addGap(27, 27, 27)
+                        .addComponent(btn)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addContainerGap()
                 .addComponent(lblbienvenida)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btn))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -89,6 +106,8 @@ public class JFTutor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn;
+    private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel lblbienvenida;
     // End of variables declaration//GEN-END:variables
 }

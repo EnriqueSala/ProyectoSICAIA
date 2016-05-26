@@ -9,12 +9,12 @@ package view;
  *
  * @author Marco
  */
-public class JFVerAlumnos extends javax.swing.JFrame {
+public class JFAsistencia extends javax.swing.JFrame {
 
     /**
-     * Creates new form JFVerAlumnos
+     * Creates new form Prueba
      */
-    public JFVerAlumnos() {
+    public JFAsistencia() {
         initComponents();
     }
 
@@ -28,36 +28,49 @@ public class JFVerAlumnos extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablaAlumnos = new javax.swing.JTable();
+        TablaAsistencia = new javax.swing.JTable();
+        btnAsistencia = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnCorreos = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        TablaAlumnos.setModel(new javax.swing.table.DefaultTableModel(
+        TablaAsistencia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
+                {null, null, null, null, null,  new Boolean(false)},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Apellidos", "Grado", "Grupo", "Asignatura", "Tutor"
+                "Nombre", "Apellidos", "Grado", "Grupo", "Asignatura", "Asistencia"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        jScrollPane1.setViewportView(TablaAlumnos);
+        jScrollPane1.setViewportView(TablaAsistencia);
+        if (TablaAsistencia.getColumnModel().getColumnCount() > 0) {
+            TablaAsistencia.getColumnModel().getColumn(5).setResizable(false);
+        }
 
-        jLabel1.setText("Mandar Correo a los tutores");
+        btnAsistencia.setText("TomarAsistencia");
 
-        btnCorreos.setText("Correos");
+        jLabel1.setText("Asignar valores a asistencia");
+
+        jLabel2.setText("1=Presente y 0=Ausente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,15 +78,15 @@ public class JFVerAlumnos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(btnCorreos)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addComponent(btnAsistencia))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,10 +95,12 @@ public class JFVerAlumnos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCorreos)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAsistencia))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,28 +123,30 @@ public class JFVerAlumnos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFVerAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFVerAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFVerAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFVerAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFVerAlumnos().setVisible(true);
+                new JFAsistencia().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTable TablaAlumnos;
-    public javax.swing.JButton btnCorreos;
+    public javax.swing.JTable TablaAsistencia;
+    public javax.swing.JButton btnAsistencia;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

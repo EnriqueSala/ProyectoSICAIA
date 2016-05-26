@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JTable;
@@ -21,7 +22,7 @@ import view.JFVerAlumnos;
 public class ControladorVerAlumnos{
     JFVerAlumnos vistaver = new JFVerAlumnos();
     RecuperarAlumnos recuperaralumnos = new RecuperarAlumnos();
-    Alumno alumno = new Alumno();
+    
     String grado, grupo, asignatura;
     
     
@@ -31,6 +32,7 @@ public class ControladorVerAlumnos{
         this.grado=grado;
         this.grupo=grupo;
         this.asignatura=asignatura;
+        
     }
     
     
@@ -55,7 +57,6 @@ public class ControladorVerAlumnos{
         
         
         
-        
         for(int i=0; i<cantidad; i++)
         {
             
@@ -73,4 +74,7 @@ public class ControladorVerAlumnos{
     }
     
     
-}
+    }
+    
+    
+

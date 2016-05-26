@@ -8,43 +8,38 @@ package persistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import model.Alumno;
 
 /**
  *
  * @author Marco
  */
-public class RecuperarAlumnos {
+public class RecuperarTutorAlumno {
     Conexion conexion;
     
-    public RecuperarAlumnos(){
+    public RecuperarTutorAlumno(){
         conexion = new Conexion();
     }
     
-    public ArrayList listaralumnos(String grado, String grupo, String asignatura){
-       ArrayList listaalumnos = new ArrayList();
+    
+    public String listarTutorAlumno(String tutor){
+       String nombre = new String();
        Alumno alumno;
        
         try {
             Connection accesoBD = conexion.getConexion();
-            PreparedStatement ps = accesoBD.prepareStatement("select * from gruposyalumnos where grado=" + "'"+grado+"'" + "and grupo="+"'"+grupo+"'" + "and asignatura="+"'"+asignatura+"'");
+            PreparedStatement ps = accesoBD.prepareStatement("select * from gruposyalumnos where tutor=" + "'"+tutor+"'");
             ResultSet rs = ps.executeQuery();
             
             while(rs.next()){
                 alumno = new Alumno();
+                
                 alumno.setNombre(rs.getString(1));
-                alumno.setApellidos(rs.getString(2));
-                alumno.setGrado(rs.getString(3));
-                alumno.setGrupo(rs.getString(4));
-                alumno.setAsignatura(rs.getString(5));
-                alumno.setTutor(rs.getString(6));
-                listaalumnos.add(alumno);
+                nombre=alumno.getNombre();
                 
             }
         } catch (Exception e) {
         }
-        return listaalumnos;
+        return nombre       ;
     }
-    
 }

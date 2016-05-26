@@ -22,6 +22,7 @@ import javax.mail.internet.MimeMultipart;
 import javax.swing.JOptionPane;
 import model.Correo;
 import view.JFCorreo;
+import view.JFGrupo;
 
 /**
  *
@@ -32,12 +33,15 @@ public class ControladorCorreo implements ActionListener{
     JFCorreo vistaCorreo = new JFCorreo();
     Correo c = new Correo();
     ArrayList<String> correos = new ArrayList<String>();
+    JFGrupo vistagrupo = new JFGrupo();
     
-    public ControladorCorreo(JFCorreo vistaCorreo,Correo c, ArrayList<String> correos){
+    public ControladorCorreo(JFCorreo vistaCorreo,Correo c, ArrayList<String> correos,JFGrupo vistagrupo){
         this.vistaCorreo = vistaCorreo;
         this.c=c;
         this.vistaCorreo.btnEnviar.addActionListener(this);
         this.correos=correos;
+        this.vistagrupo=vistagrupo;
+        this.vistaCorreo.btnRegresar.addActionListener(this);
         
     }
     
@@ -81,7 +85,7 @@ public class ControladorCorreo implements ActionListener{
             return true;
             
         } catch (Exception e) {
-            System.out.println("Error"+ e);
+            JOptionPane.showMessageDialog(null, "Favor de contar con una conexion a internet segura");
             return false;
         }
     }
@@ -96,24 +100,41 @@ public class ControladorCorreo implements ActionListener{
             c.setUsuarioCorreo("marcostarr1940@gmail.com");
             c.setAsunto(vistaCorreo.txtAsunto.getText());
             c.setMensaje(vistaCorreo.txtMensaje.getText());
+            
+            //if(correos.get(i)==null){
+            
             c.setDestino(correos.get(i));
             c.setNombreArchivo("");
             c.setRutaArchivo("");
             
             
             
+            
             if(enviarCorreo(c)){
-                JOptionPane.showMessageDialog(null, "Exito");
+               
             }else{
-                JOptionPane.showMessageDialog(null, "Tu puedes");
+            
             }
+            
+            //}
+            
+            
+            
         
             }
             
         }
     
     public void actionPerformed (ActionEvent e){
+        
+        if(e.getSource()==vistaCorreo.btnEnviar){
         enviar();
+        }
+        
+        if (e.getSource()==vistaCorreo.btnRegresar){
+            vistaCorreo.setVisible(false);
+            vistagrupo.setVisible(true);
+        }
     }
     
 }

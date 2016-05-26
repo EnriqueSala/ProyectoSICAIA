@@ -70,7 +70,7 @@ public class ControladorLogin implements ActionListener{
             RecuperarTutorAlumno recuperar = new RecuperarTutorAlumno();
             
             String alumno = recuperar.listarTutorAlumno(empleado.getNombre());
-            ControladorTutor controladortutor = new ControladorTutor(vistatutor, login, alumno);
+            ControladorTutor controladortutor = new ControladorTutor(vistatutor, login, alumno,vistalogin);
             
             
             

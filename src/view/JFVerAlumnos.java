@@ -29,8 +29,7 @@ public class JFVerAlumnos extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaAlumnos = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        btnCorreos = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,9 +54,7 @@ public class JFVerAlumnos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TablaAlumnos);
 
-        jLabel1.setText("Mandar Correo a los tutores");
-
-        btnCorreos.setText("Correos");
+        btnRegresar.setText("Cerrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,26 +63,19 @@ public class JFVerAlumnos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(btnCorreos)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(btnRegresar)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCorreos)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegresar)
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -128,8 +118,7 @@ public class JFVerAlumnos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTable TablaAlumnos;
-    public javax.swing.JButton btnCorreos;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

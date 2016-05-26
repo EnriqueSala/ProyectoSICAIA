@@ -30,6 +30,7 @@ public class JFTutor extends javax.swing.JFrame {
         lblbienvenida = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btn = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,6 +39,8 @@ public class JFTutor extends javax.swing.JFrame {
         jLabel1.setText("Ver Asistencias");
 
         btn.setText("Ver");
+
+        btnRegresar.setText("CerrarSesion");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,8 +55,10 @@ public class JFTutor extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(jLabel1)
                         .addGap(27, 27, 27)
-                        .addComponent(btn)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addComponent(btn)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegresar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,8 +68,9 @@ public class JFTutor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(btn))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(btn)
+                    .addComponent(btnRegresar))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,6 +113,7 @@ public class JFTutor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel lblbienvenida;
     // End of variables declaration//GEN-END:variables

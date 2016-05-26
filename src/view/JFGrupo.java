@@ -28,6 +28,7 @@ public class JFGrupo extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        btnRegresarr = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         MenuAcciones = new javax.swing.JMenu();
         Veralumnos = new javax.swing.JMenuItem();
@@ -39,6 +40,8 @@ public class JFGrupo extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnRegresarr.setText("Cerrar grupo");
 
         MenuAcciones.setText("Acciones");
 
@@ -65,11 +68,17 @@ public class JFGrupo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(203, Short.MAX_VALUE)
+                .addComponent(btnRegresarr)
+                .addGap(102, 102, 102))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(btnRegresarr)
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,6 +126,7 @@ public class JFGrupo extends javax.swing.JFrame {
     public javax.swing.JMenuBar MenuBar;
     public javax.swing.JMenuItem Tomarasistencia;
     public javax.swing.JMenuItem Veralumnos;
+    public javax.swing.JButton btnRegresarr;
     public javax.swing.JMenu grupo;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables

@@ -5,26 +5,32 @@
  */
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Asistencia;
 import persistencia.RecuperarTutorAsistenciaHijo;
+import view.JFTutor;
 import view.JFTutorAsistenciasHijo;
 
 /**
  *
  * @author Marco
  */
-public class ControladorTutorAsistenciasHijo {
+public class ControladorTutorAsistenciasHijo implements ActionListener {
     JFTutorAsistenciasHijo vista = new JFTutorAsistenciasHijo();
     RecuperarTutorAsistenciaHijo recuperar = new RecuperarTutorAsistenciaHijo();
     String alumno;
+    JFTutor vistatutor = new JFTutor();
     
-    public ControladorTutorAsistenciasHijo(JFTutorAsistenciasHijo vista, RecuperarTutorAsistenciaHijo recuperar,String alumno){
+    public ControladorTutorAsistenciasHijo(JFTutorAsistenciasHijo vista, RecuperarTutorAsistenciaHijo recuperar,String alumno,JFTutor vistaturor){
         this.vista=vista;
         this.recuperar=recuperar;
         this.alumno=alumno;
+        this.vistatutor=vistaturor;
+        this.vista.btnRegresar.addActionListener(this);
         
     }
     
@@ -71,6 +77,11 @@ public class ControladorTutorAsistenciasHijo {
             modeloT.addRow(columna);
         }    
 
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        vista.setVisible(false);
+        vistatutor.setVisible(true);
     }
     
 }

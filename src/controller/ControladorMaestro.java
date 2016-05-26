@@ -14,6 +14,7 @@ import model.Grupo;
 import persistencia.Login;
 import persistencia.RecuperarGrupos;
 import view.JFGrupo;
+import view.JFLogin;
 import view.JFMaestro;
 
 /**
@@ -31,6 +32,8 @@ public class ControladorMaestro implements ActionListener{
         this.vistamaestro=vistamaestro;
         this.usuariomaestro=usuariomaestro;
         this.vistamaestro.btngrupo.addActionListener(this);
+        this.vistamaestro.btn.addActionListener(this);
+       
        
         
     }
@@ -55,16 +58,31 @@ public class ControladorMaestro implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent e){
+        
+        if (e.getSource()==vistamaestro.btngrupo){
         JFGrupo vistagrupo = new JFGrupo();
         String seleccionado = (String)vistamaestro.cbogrupos.getSelectedItem();
         String[] datos = seleccionado.split(" ");
         String grado = datos[0];
         String grupo = datos[1];
         String asignatura = datos[2];
-        ControladorGrupo controladorgrupo= new ControladorGrupo(vistagrupo, seleccionado, grado, grupo, asignatura);
+        ControladorGrupo controladorgrupo= new ControladorGrupo(vistagrupo, seleccionado, grado, grupo, asignatura,vistamaestro);
         vistagrupo.setVisible(true);
         vistagrupo.setLocationRelativeTo(null);
         vistamaestro.setVisible(false);
+        }
+        
+        if (e.getSource()==vistamaestro.btn){
+            
+            
+            vistamaestro.setVisible(false);
+            
+            JFLogin vistalogin=new JFLogin();
+            Login usuariologin = new Login();
+            ControladorLogin controladorlogin = new ControladorLogin(vistalogin, usuariologin);
+            vistalogin.setVisible(true);
+            vistalogin.setLocationRelativeTo(null);
+        }
         
     }
     

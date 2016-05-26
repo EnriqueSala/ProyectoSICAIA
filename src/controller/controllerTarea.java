@@ -11,6 +11,7 @@ import model.Actividad;
 import persistencia.FileActividad;
 import view.ViewNuevaActividad;
 import persistencia.BD_Actividad;
+import view.ViewTareasPorFecha;
 
 /**
  *
@@ -19,11 +20,14 @@ import persistencia.BD_Actividad;
 public class controllerTarea implements ActionListener{
     private Actividad modelo = new Actividad();
     private ViewNuevaActividad view = new ViewNuevaActividad();
+    ViewTareasPorFecha viewtarea = new ViewTareasPorFecha();
 
-    public controllerTarea(Actividad modelo, ViewNuevaActividad view) {
+    public controllerTarea(Actividad modelo, ViewNuevaActividad view,ViewTareasPorFecha viewtarea) {
         this.modelo = modelo;
         this.view = view;
         this.view.jButtonGuardar.addActionListener(this);
+        this.viewtarea=viewtarea;
+        this.view.btnRegresar.addActionListener(this);
     }
 
 
@@ -39,6 +43,11 @@ public void actionPerformed(ActionEvent e){
         String fecha = formatoFecha.format(view.jDateEntrega.getDate());
         BD_Actividad registro = new BD_Actividad();
         registro.Insertaractividad(nombre, valor, descripcion,fecha);
+    }
+    
+    if(e.getSource()==view.btnRegresar){
+        view.setVisible(false);
+        viewtarea.setVisible(true);
     }
 
 }

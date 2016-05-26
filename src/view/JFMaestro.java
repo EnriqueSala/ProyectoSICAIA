@@ -31,6 +31,7 @@ public class JFMaestro extends javax.swing.JFrame {
         cbogrupos = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         btngrupo = new javax.swing.JButton();
+        btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,23 +47,26 @@ public class JFMaestro extends javax.swing.JFrame {
 
         btngrupo.setText("Ir al grupo");
 
+        btn.setText("Cerrar Secion");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(cbogrupos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblbienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(btngrupo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(lblbienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                        .addGap(19, 19, 19)
+                        .addComponent(btngrupo)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn)))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +80,9 @@ public class JFMaestro extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblbienvenida)))
                 .addGap(18, 18, 18)
-                .addComponent(btngrupo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btngrupo)
+                    .addComponent(btn))
                 .addGap(39, 39, 39))
         );
 
@@ -123,6 +129,7 @@ public class JFMaestro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn;
     public javax.swing.JButton btngrupo;
     public javax.swing.JComboBox<String> cbogrupos;
     private javax.swing.JLabel jLabel1;

@@ -26,11 +26,11 @@ public class ViewNuevaActividad extends javax.swing.JFrame {
     }
 
     public JButton getjButton2() {
-        return jButton2;
+        return btnRegresar;
     }
 
     public void setjButton2(JButton jButton2) {
-        this.jButton2 = jButton2;
+        this.btnRegresar = jButton2;
     }
 
     public JScrollPane getjScrollPane1() {
@@ -83,7 +83,7 @@ public class ViewNuevaActividad extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jTextFieldValorActividad = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaDescripcionActividad = new javax.swing.JTextArea();
         jTextFieldNombreActividad = new javax.swing.JTextField();
@@ -104,7 +104,7 @@ public class ViewNuevaActividad extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
+        btnRegresar.setText("Cancelar");
 
         jTextAreaDescripcionActividad.setColumns(20);
         jTextAreaDescripcionActividad.setRows(5);
@@ -163,7 +163,7 @@ public class ViewNuevaActividad extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(btnRegresar)
                         .addGap(86, 86, 86))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -194,7 +194,7 @@ public class ViewNuevaActividad extends javax.swing.JFrame {
                                 .addGap(4, 4, 4)
                                 .addComponent(jDateEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(26, 26, 26)
-                        .addComponent(jButton2)
+                        .addComponent(btnRegresar)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(4, 4, 4)
@@ -256,7 +256,7 @@ public class ViewNuevaActividad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton btnRegresar;
     public javax.swing.JButton jButtonGuardar;
     public com.toedter.calendar.JDateChooser jDateEntrega;
     private javax.swing.JLabel jLabel1;

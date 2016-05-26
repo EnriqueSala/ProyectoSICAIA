@@ -13,25 +13,29 @@ import javax.swing.table.DefaultTableModel;
 import model.Alumno;
 import org.eclipse.persistence.jpa.jpql.parser.JoinFetchBNF;
 import persistencia.RecuperarAlumnos;
+import view.JFGrupo;
 import view.JFVerAlumnos;
 
 /**
  *
  * @author Marco
  */
-public class ControladorVerAlumnos{
+public class ControladorVerAlumnos implements ActionListener{
     JFVerAlumnos vistaver = new JFVerAlumnos();
     RecuperarAlumnos recuperaralumnos = new RecuperarAlumnos();
+    JFGrupo vistagrupo = new JFGrupo();
     
     String grado, grupo, asignatura;
     
     
-    public ControladorVerAlumnos(JFVerAlumnos vistaver, RecuperarAlumnos recuperaralumnos, String grado, String grupo, String asignatura){
+    public ControladorVerAlumnos(JFVerAlumnos vistaver, RecuperarAlumnos recuperaralumnos, String grado, String grupo, String asignatura, JFGrupo vistagrupo){
         this.vistaver=vistaver;
         this.recuperaralumnos=recuperaralumnos;
         this.grado=grado;
         this.grupo=grupo;
         this.asignatura=asignatura;
+        this.vistagrupo=vistagrupo;
+        this.vistaver.btnRegresar.addActionListener(this);
         
     }
     
@@ -71,6 +75,13 @@ public class ControladorVerAlumnos{
             modeloT.addRow(columna);
         }    
 
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        if (e.getSource()==vistaver.btnRegresar){
+            vistaver.setVisible(false);
+            vistagrupo.setVisible(true);
+        }
     }
     
     

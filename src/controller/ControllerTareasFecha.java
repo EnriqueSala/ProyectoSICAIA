@@ -14,9 +14,11 @@ import view.ViewTareasPorFecha;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import persistencia.BD_Actividad;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTable;
+import view.JFGrupo;
 import view.ViewNuevaActividad;
 /**
  *
@@ -26,12 +28,15 @@ public class ControllerTareasFecha implements ActionListener{
     ViewTareasPorFecha view = new ViewTareasPorFecha();
     BD_Actividad recuperarActividades=new BD_Actividad();
     Actividad actividad= new Actividad();
+    JFGrupo vistagrupo = new JFGrupo();
     
     
-    public ControllerTareasFecha(ViewTareasPorFecha view, BD_Actividad recuperarActividades){
+    public ControllerTareasFecha(ViewTareasPorFecha view, BD_Actividad recuperarActividades,JFGrupo vistagrupo){
         this.view = view;
         this.view.jButtonNuevaTarea.addActionListener(this);
         this.view.jBuscarPorFecha.addActionListener(this);
+        this.vistagrupo=vistagrupo;
+        this.view.btnRegresar.addActionListener(this);
     }
     public void RellenarTabla(JTable TablaActividades){
         Actividad actividad =new Actividad();
@@ -61,11 +66,21 @@ public class ControllerTareasFecha implements ActionListener{
         if(e.getSource()==view.jButtonNuevaTarea){
             ViewNuevaActividad nuevatarea=new ViewNuevaActividad();
             Actividad actividad=new Actividad();
-            controllerTarea vistaTarea=new controllerTarea(actividad,nuevatarea);
+            controllerTarea vistaTarea=new controllerTarea(actividad,nuevatarea,view);
             nuevatarea.setVisible(true);
+            view.setVisible(false);
         }
         if(e.getSource()==view.jBuscarPorFecha){
-            RellenarTabla(view.jTableActividades);
+            try{
+                RellenarTabla(view.jTableActividades);
+            }catch(java.lang.NullPointerException ex){
+                JOptionPane.showMessageDialog(null,"No seleccionó una fecha valida");
+            }
+        }
+        
+        if (e.getSource()==view.btnRegresar){
+            view.setVisible(false);
+            vistagrupo.setVisible(true);
         }
     
     }

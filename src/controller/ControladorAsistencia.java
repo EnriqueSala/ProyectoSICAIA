@@ -20,6 +20,7 @@ import model.Alumno;
 import persistencia.NuevaAsistencia;
 import persistencia.RecuperarAlumnos;
 import view.JFAsistencia;
+import view.JFGrupo;
 
 /**
  *
@@ -29,16 +30,19 @@ public class ControladorAsistencia implements ActionListener{
     
     JFAsistencia vistaasistencia = new JFAsistencia();
     RecuperarAlumnos recuperaralumnos = new RecuperarAlumnos();
+    JFGrupo vistagrupo = new JFGrupo();
     String grado, grupo, asignatura;
     
     
-    public ControladorAsistencia(JFAsistencia vistaasistencia, RecuperarAlumnos recuperaralumnos, String grado, String grupo, String asignatura){
+    public ControladorAsistencia(JFAsistencia vistaasistencia, RecuperarAlumnos recuperaralumnos, String grado, String grupo, String asignatura,JFGrupo vistagrupo){
         this.vistaasistencia=vistaasistencia;
         this.recuperaralumnos=recuperaralumnos;
         this.grado=grado;
         this.grupo=grupo;
         this.asignatura=asignatura;
         this.vistaasistencia.btnAsistencia.addActionListener(this);
+        this.vistagrupo=vistagrupo;
+        this.vistaasistencia.btnRegresar.addActionListener(this);
         
     }
     
@@ -84,6 +88,7 @@ public class ControladorAsistencia implements ActionListener{
     
     
     public void actionPerformed(ActionEvent e){
+        if(e.getSource()==vistaasistencia.btnAsistencia){
         NuevaAsistencia nueva = new NuevaAsistencia();
         for(int i=0;i<vistaasistencia.TablaAsistencia.getRowCount();i++){
             String nombre= (String)vistaasistencia.TablaAsistencia.getValueAt(i,0);
@@ -102,6 +107,13 @@ public class ControladorAsistencia implements ActionListener{
             
             nueva.AgregarAsistencia(nombre, apellidos, grado, grupo, asignatura, asistencia, dia, mes, año);
             
+        }
+        }
+        
+        
+        if (e.getSource()==vistaasistencia.btnRegresar){
+            vistaasistencia.setVisible(false);
+            vistagrupo.setVisible(true);
         }
     }  
     

@@ -30,7 +30,7 @@ public class ViewTareasPorFecha extends javax.swing.JFrame {
 
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButtonNuevaTarea = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableActividades = new javax.swing.JTable();
         jFechaBuscar = new com.toedter.calendar.JDateChooser();
@@ -46,10 +46,10 @@ public class ViewTareasPorFecha extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setText("Cancelar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -101,7 +101,7 @@ public class ViewTareasPorFecha extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonNuevaTarea)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(btnRegresar)
                         .addGap(47, 47, 47))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -125,7 +125,7 @@ public class ViewTareasPorFecha extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonNuevaTarea)
-                    .addComponent(jButton2))
+                    .addComponent(btnRegresar))
                 .addGap(19, 19, 19))
         );
 
@@ -136,9 +136,9 @@ public class ViewTareasPorFecha extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonNuevaTareaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void jBuscarPorFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarPorFechaActionPerformed
         // TODO add your handling code here:
@@ -180,8 +180,8 @@ public class ViewTareasPorFecha extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnRegresar;
     public javax.swing.JButton jBuscarPorFecha;
-    public javax.swing.JButton jButton2;
     public javax.swing.JButton jButtonNuevaTarea;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     public com.toedter.calendar.JDateChooser jFechaBuscar;

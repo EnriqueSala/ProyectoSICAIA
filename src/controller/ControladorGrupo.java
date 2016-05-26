@@ -8,6 +8,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Alumno;
 import model.Correo;
@@ -17,6 +18,7 @@ import persistencia.RecuperarCorreos;
 import view.JFAsistencia;
 import view.JFCorreo;
 import view.JFGrupo;
+import view.JFMaestro;
 import view.JFVerAlumnos;
 import view.ViewTareasPorFecha;
 
@@ -28,20 +30,23 @@ public class ControladorGrupo implements ActionListener{
     
     JFGrupo vistagrupo = new JFGrupo();
     String grado, grupo, asignatura;
+    JFMaestro vistamaestro = new JFMaestro();
     
     
     
     
-    public ControladorGrupo(JFGrupo vistagrupo, String seleccionado, String grado, String grupo, String asignatura){
+    public ControladorGrupo(JFGrupo vistagrupo, String seleccionado, String grado, String grupo, String asignatura, JFMaestro vistamaestro){
         this.vistagrupo=vistagrupo;
         this.vistagrupo.Veralumnos.addActionListener(this);
         this.vistagrupo.Tomarasistencia.addActionListener(this);
         this.vistagrupo.MandarCorreo.addActionListener(this);
         this.vistagrupo.AgregarTarea.addActionListener(this);
+        this.vistagrupo.btnRegresarr.addActionListener(this);
         vistagrupo.grupo.setText(seleccionado);
         this.grado=grado;
         this.grupo=grupo;
         this.asignatura=asignatura;
+        this.vistamaestro=vistamaestro;
         
     }
     
@@ -54,10 +59,15 @@ public class ControladorGrupo implements ActionListener{
         if (e.getSource()== vistagrupo.Veralumnos){
             JFVerAlumnos vistaalumnos = new JFVerAlumnos();
             RecuperarAlumnos recuperar = new RecuperarAlumnos();
-            ControladorVerAlumnos controlador= new ControladorVerAlumnos(vistaalumnos, recuperar, grado, grupo, asignatura);
+            ControladorVerAlumnos controlador= new ControladorVerAlumnos(vistaalumnos, recuperar, grado, grupo, asignatura,vistagrupo);
             
             controlador.RellenarTabla(vistaalumnos.TablaAlumnos);
+            
+            
             vistaalumnos.setVisible(true);
+            vistagrupo.setVisible(false);
+            
+            
             
             
         }
@@ -66,10 +76,11 @@ public class ControladorGrupo implements ActionListener{
         if (e.getSource()== vistagrupo.Tomarasistencia){
             JFAsistencia vistaasistencia = new JFAsistencia();
             RecuperarAlumnos recuperar = new RecuperarAlumnos();
-            ControladorAsistencia controlador= new ControladorAsistencia(vistaasistencia, recuperar, grado, grupo, asignatura);
+            ControladorAsistencia controlador= new ControladorAsistencia(vistaasistencia, recuperar, grado, grupo, asignatura,vistagrupo);
             
             controlador.RellenarTabla(vistaasistencia.TablaAsistencia);
             vistaasistencia.setVisible(true);
+            vistagrupo.setVisible(false);
             
             
         }
@@ -96,7 +107,7 @@ public class ControladorGrupo implements ActionListener{
                 
             }
             
-            ControladorCorreo controlador = new ControladorCorreo(vistacorreo,c,listaCorreos);
+            ControladorCorreo controlador = new ControladorCorreo(vistacorreo,c,listaCorreos,vistagrupo);
             
             
             
@@ -106,6 +117,7 @@ public class ControladorGrupo implements ActionListener{
             
             
             vistacorreo.setVisible(true);
+            vistagrupo.setVisible(false);
             vistacorreo.setLocationRelativeTo(null);
         }
         
@@ -113,8 +125,18 @@ public class ControladorGrupo implements ActionListener{
         if(e.getSource()==vistagrupo.AgregarTarea){
             BD_Actividad bd= new BD_Actividad();
             ViewTareasPorFecha vista = new ViewTareasPorFecha();
-            ControllerTareasFecha controlador = new ControllerTareasFecha(vista,bd);
+            ControllerTareasFecha controlador = new ControllerTareasFecha(vista,bd,vistagrupo);
             vista.setVisible(true);
+            vistagrupo.setVisible(false);
+            
+            
+            
+        }
+        
+        if (e.getSource()==vistagrupo.btnRegresarr){
+            vistagrupo.setVisible(false);
+            vistamaestro.setVisible(true);
+            
             
             
             

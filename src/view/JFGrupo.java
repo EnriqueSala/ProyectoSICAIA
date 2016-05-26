@@ -32,10 +32,8 @@ public class JFGrupo extends javax.swing.JFrame {
         MenuAcciones = new javax.swing.JMenu();
         Veralumnos = new javax.swing.JMenuItem();
         Tomarasistencia = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        AgregarTarea = new javax.swing.JMenuItem();
         MandarCorreo = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         grupo = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -50,19 +48,13 @@ public class JFGrupo extends javax.swing.JFrame {
         Tomarasistencia.setText("Tomar Asistencia");
         MenuAcciones.add(Tomarasistencia);
 
-        jMenuItem4.setText("Agregar tarea");
-        MenuAcciones.add(jMenuItem4);
-
-        jMenuItem5.setText("Planificacion del curso");
-        MenuAcciones.add(jMenuItem5);
+        AgregarTarea.setText("Agregar tarea");
+        MenuAcciones.add(AgregarTarea);
 
         MandarCorreo.setText("Mandar correo");
         MenuAcciones.add(MandarCorreo);
 
         MenuBar.add(MenuAcciones);
-
-        jMenu2.setText("Calendario");
-        MenuBar.add(jMenu2);
 
         grupo.setText("Grupo");
         MenuBar.add(grupo);
@@ -119,15 +111,13 @@ public class JFGrupo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem AgregarTarea;
     public javax.swing.JMenuItem MandarCorreo;
     public javax.swing.JMenu MenuAcciones;
     public javax.swing.JMenuBar MenuBar;
     public javax.swing.JMenuItem Tomarasistencia;
     public javax.swing.JMenuItem Veralumnos;
     public javax.swing.JMenu grupo;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }

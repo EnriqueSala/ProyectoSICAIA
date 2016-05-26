@@ -7,26 +7,36 @@ package model;
 
 /**
  *
- * @author Marco
+ * @author Kike
  */
 public class Actividad {
-    
-    private int valor;
-    private String descripcion;
     private String nombre;
-    private String fecha;
-    private String contenido;
-    private String retroalimentacion;
+    private String valor;
+    private String descripcion;
     private int calificacion;
-    private String fecha_de_entrega;
+    private String retroalimentacion;
+    private String fecha_entrega;
+    public String getFecha_entrega() {
+        return fecha_entrega;
+    }
 
-    
-    
-    public int getValor() {
+    public void setFecha_entrega(String fecha_entrega) {
+        this.fecha_entrega = fecha_entrega;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
@@ -38,28 +48,12 @@ public class Actividad {
         this.descripcion = descripcion;
     }
 
-    public String getNombre() {
-        return nombre;
+    public int getCalificacion() {
+        return calificacion;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getContenido() {
-        return contenido;
-    }
-
-    public void setContenido(String contenido) {
-        this.contenido = contenido;
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 
     public String getRetroalimentacion() {
@@ -69,27 +63,9 @@ public class Actividad {
     public void setRetroalimentacion(String retroalimentacion) {
         this.retroalimentacion = retroalimentacion;
     }
-
-    public int getCalificacion() {
-        return calificacion;
+    @Override
+    public String toString(){
+        return nombre + "\n" + descripcion + "\n" +
+               "La tarea tendrá un valor de " + valor + " puntos"; 
     }
-
-    public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    public String getFecha_de_entrega() {
-        return fecha_de_entrega;
-    }
-
-    public void setFecha_de_entrega(String fecha_de_entrega) {
-        this.fecha_de_entrega = fecha_de_entrega;
-    }
-    
-    
-    
-    
-    
-    
-    
 }

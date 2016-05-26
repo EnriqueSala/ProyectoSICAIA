@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Alumno;
 import model.Correo;
+import persistencia.BD_Actividad;
 import persistencia.RecuperarAlumnos;
 import persistencia.RecuperarCorreos;
 import view.JFAsistencia;
 import view.JFCorreo;
 import view.JFGrupo;
 import view.JFVerAlumnos;
+import view.ViewTareasPorFecha;
 
 /**
  *
@@ -35,6 +37,7 @@ public class ControladorGrupo implements ActionListener{
         this.vistagrupo.Veralumnos.addActionListener(this);
         this.vistagrupo.Tomarasistencia.addActionListener(this);
         this.vistagrupo.MandarCorreo.addActionListener(this);
+        this.vistagrupo.AgregarTarea.addActionListener(this);
         vistagrupo.grupo.setText(seleccionado);
         this.grado=grado;
         this.grupo=grupo;
@@ -104,6 +107,17 @@ public class ControladorGrupo implements ActionListener{
             
             vistacorreo.setVisible(true);
             vistacorreo.setLocationRelativeTo(null);
+        }
+        
+        
+        if(e.getSource()==vistagrupo.AgregarTarea){
+            BD_Actividad bd= new BD_Actividad();
+            ViewTareasPorFecha vista = new ViewTareasPorFecha();
+            ControllerTareasFecha controlador = new ControllerTareasFecha(vista,bd);
+            vista.setVisible(true);
+            
+            
+            
         }
         
         
